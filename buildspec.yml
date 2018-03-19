@@ -1,6 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Simple CRUD web service. State is stored in a DynamoDB table.
+Globals:
+  Function:
+    Runtime: nodejs6.10
+    Timeout: 60
+    Environment:
+      Variables:    
+         DbConnection: mysql://somewhere
+     AutoPublishAlias: live
+     DeploymentPreference:
+       Type: Canary10Percent10Minutes
 Resources:
   GetFunction:
     Type: AWS::Serverless::Function
