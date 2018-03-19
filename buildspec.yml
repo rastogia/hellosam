@@ -9,8 +9,8 @@ Globals:
       Variables:    
          DbConnection: mysql://somewhere
     AutoPublishAlias: live
-    DeploymentPreference:
-      Type: Canary10Percent10Minutes
+    #DeploymentPreference:
+    #  Type: Canary10Percent10Minutes
 Resources:
   GetFunction:
     Type: AWS::Serverless::Function
